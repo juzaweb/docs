@@ -61,7 +61,7 @@ To apply a filter on a section of code, wrap it with the apply tag:
     This text becomes uppercase
 {% endapply %}
 ```
-Go to the filters page to learn more about built-in filters.
+Go to the filter's page to learn more about built-in filters.
 
 ##### Functions
 Functions can be called to generate content. Functions are called by their name followed by parentheses (()) and may have arguments.
@@ -72,6 +72,6 @@ For instance, the range function returns a list containing an arithmetic progres
     {{ i }},
 {% endfor %}
 ```
-Go to the functions page to learn more about the built-in functions.
+Go to the function's page to learn more about the built-in functions.
 
 See all documention [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com/doc/3.x/)

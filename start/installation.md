@@ -21,4 +21,4 @@ Run command
 ```
 php artisan juzacms:install
 ```
-Or go to `http://yoursite/install` to install
+Or go to `http://yoursite/install` on browser

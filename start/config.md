@@ -20,6 +20,12 @@ php artisan vendor:publish --tag=cms_assets
 ```
 
 ### Config
+
+- Publish config file
+```
+php artisan vendor:publish --tag=cms_config
+```
+
 ```php
 <?php
 
@@ -30,14 +36,6 @@ return [
      * Default: admin-cp
      */
     'admin_prefix' => env('ADMIN_PREFIX', 'admin-cp'),
-
-    /**
-     * Enable api for route
-     *
-     * Supported auth route
-     * Default: false
-     */
-    'api_route' => (bool) env('API_ROUTE', false),
 
     'email' => [
         /**
@@ -95,7 +93,7 @@ return [
         /**
          * Plugins assets path
          *
-         * Path for assets when it was publish
+         * Path for assets when it was published
          * Default: plugins
          */
         'assets' => public_path('plugins'),
@@ -117,7 +115,10 @@ return [
         'deny_iframe' => true,
 
     ],
-
+    
+    /**
+     * File management setting
+     */
     'filemanager' => [
         'disk' => 'public',
         'image-optimizer' => (bool) env('IMAGE_OPTIMIZER', false),
@@ -148,6 +149,9 @@ return [
         ],
     ],
 
+    /**
+     * Default database config
+     */
     'config' => [
         'title',
         'description',

@@ -7,7 +7,7 @@ php artisan plugin:make-model ModelName author/plugin-name
 ```
 php artisan plugin:make-controller ModelName author/plugin-name
 ```
-- **Make resource**
+- **Make resource** Generate Juza CMS resource for the specified plugin.
 ```
 php artisan plugin:make-jw-resource table_name author/plugin-name
 ```

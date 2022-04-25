@@ -3,10 +3,7 @@ Creating a plugin is simple and straightforward. Run the following command to cr
 ```
 php artisan plugin:make author/plugin-name
 ```
-E.x:
-```
-php artisan plugin:make theanh/ecommerce
-```
+
 - Plugin folder truck
 ```
 plugins/
@@ -48,25 +45,36 @@ Open the composer.json file, you will see a file of the form
     "extra": {
         "laravel": {
             "providers": [
-                "Author\\Name\\Providers\\PluginNameServiceProvider"
+                "Author\\Name\\Providers\\LaravelServiceProvider"
             ]
         },
         "juzaweb": {
+            "providers": [
+                "Juzaweb\\Name\\Providers\\PluginServiceProvider"
+            ],
             "name": "Name plugin",
             "domain": "domain",
+            "cms_min": "3.0",
             "version": "1.0"
         }
     },
     "autoload": {
         "psr-4": {
             "Author\\Name\\": "src/"
-        },
-        "classmap": [
-            "database/seeders"
-        ]
+        }
     }
 }
 ```
+
+### Service Provider
+- `LaravelServiceProvider` autoload load on plugin install by composer
+- `PluginServiceProvider` load on plugin activated
+
+### Extra `juzaweb` config
+- `name`: Display name plugin in cms
+- `domain`: Namespace for views and lang in plugins
+- `cms_min`: Min CMS version can run plugin
+- `version`: Current version of plugin
 
 ## Custom namespaces
 When you create a new module it also registers new custom namespace for `Lang, View and Config`. For example, if you create a new module named blog, it will also register new namespace/hint blog for that module. Then, you can use that namespace for calling `Lang, View or Config`. Following are some examples of its usage:

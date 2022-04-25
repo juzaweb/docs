@@ -17,19 +17,20 @@ Plugin is a Laravel package which was created to manage your large Laravel app u
 
 ## Breadcrumb
 Add Breadcrumb admin panel, you can extends `Mymo\Backend\Http\Controllers\BackendController` for your controller in admin and add by code:
-```
+```php
+<?php
 $this->addBreadcrumb([
     'title' => 'Title',
     'url' => 'Url',
 ]);
 ```
 E.x:
-```
+```php
 <?php
 
 // Your code
 
-use Mymo\Backend\Http\Controllers\BackendController;
+use Juzaweb\CMS\Http\Controllers\BackendController;
 
 class YourController extends BackendController
 {
@@ -40,7 +41,7 @@ class YourController extends BackendController
         // Your code
         $this->addBreadcrumb([
             'title' => 'Title',
-            'url' => 'Url',
+            'url' => 'your-url',
         ]);
         // Your code
     }
@@ -53,7 +54,8 @@ class YourController extends BackendController
 
 ### Add admin menu
 Add to your file actions
-```
+```php
+<?php
 HookAction::addAdminMenu(
     trans('movie::app.sliders'), // Label menu
     'sliders', // Menu key
@@ -76,22 +78,22 @@ HookAction::addAdminMenu(
 ### Support
 #### Form ajax
 - Add class `form-ajax` to your form to use ajax send form
-```
+```html
 <form action="" method="post" class="form-ajax">
 // Your code
 </form>
 ```
-- Else use component
-```
-@component('mymo_core::components.form', [
+- Resource form component
+```php
+@component('cms::components.form', [
     'method' => 'method: post, put, get, ...',
     'action' => 'action url'
 ])
 ```
 
 - Use component for form resource
-```
-@component('mymo_core::components.form_resource', [
+```php
+@component('cms::components.form_resource', [
     'method' => $model->id ? 'put' : 'post',
     'action' =>  $model->id ?
         route('admin.posts.update', [$model->id]) :
@@ -100,9 +102,9 @@ HookAction::addAdminMenu(
 ```
 #### Select image from file manager
 - by component
-```
-@component('mymo_core::components.form_image', [
-    'label' => trans('mymo_core::app.thumbnail'), // Label
+```php
+@component('cms::components.form_image', [
+    'label' => trans('cms::app.thumbnail'), // Label
     'name' => 'thumbnail', // Name for input
     'value' => $model->thumbnail, // Value to show image
 ])@endcomponent
@@ -113,7 +115,7 @@ HookAction::addAdminMenu(
     - data-preview: id div show preview image
 
 E.x:
-```
+```html
 <div class="form-group">
     <label class="col-form-label" for="logo">Logo <span class="float-right"><a href="javascript:void(0)" data-input="logo" data-preview="preview-logo" class="file-manager"><i class="fa fa-edit"></i> Change image</a></span></label>
     <div id="preview-logo">

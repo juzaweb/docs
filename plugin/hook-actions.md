@@ -44,7 +44,7 @@ function add_action($tag, $callback, $priority = 20, $arguments = 1)
 do_action('my.hook', $user);
 ```
 
-- The first parameter is the name of the hook; you will use this at a later point when you'll be listening to your hook. All subsequent parameters are sent to the action as parameters. These can be anything you'd like. For example you might want to tell the listeners that this is attached to a certain model. Then you would pass this as one of the arguments.
+- The first parameter is the name of the hook; you will use this at a later point when you'll be listening to your hook. All subsequent parameters are sent to the action as parameters. These can be anything you'd like. For example, you might want to tell the listeners that this is attached to a certain model. Then you would pass this as one of the arguments.
 
 - To listen to your hooks, you attach listeners. These are best added to file in actions folder in your plugin
 
