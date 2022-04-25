@@ -1,4 +1,28 @@
-### Custom Page Templates
+## Custom Page Templates
+
+### Register page templates
+Add or edit your `register.json` file
+```json
+{
+    // Your code
+    "templates": {
+        "home": {
+            "label": "Home",
+            "view": "theme::templates.home", // View template
+            "blocks": { // Define blocks for template
+                "content": {
+                    "label": "Content"
+                }
+            }
+        },
+        "support": {
+            "label": "Support",
+            "view": "theme::templates.support" // View template
+        }
+    },
+    // Your code
+}
+```
 
 The files defining each page template are found in your Themes directory. To create a new custom page template for a page you must create a file in `templates` directory. Let's call our first page template for our page snarfer.twig. At the top of the `snarfer.twig` file, put the following:
 
