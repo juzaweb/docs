@@ -4,12 +4,12 @@
     - Get post type list data
     - `@param string $type` : Post type
     - `@param  array $options`
-    -  paginate : Row per page if you would like paginate
-    -  taxonomies : Filter by taxonomies
-    -  taxonomy : Filter by taxonomy
-    -  limit : Limit posts
-    -  metas : Filter by meta
-    -  order_by : Order by. Default id DESC
+    -  `paginate` : Row per page if you would like paginate
+    -  `taxonomies` : Filter by taxonomies
+    -  `taxonomy` : Filter by taxonomy
+    -  `limit` : Limit posts
+    -  `metas` : Filter by meta
+    -  `order_by` : Order by. Default id DESC
     - `@return array`
 - **get_post_taxonomy()**
 - **get_post_taxonomies()**
