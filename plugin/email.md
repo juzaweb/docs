@@ -68,8 +68,8 @@ Email::make()
 
 namespace Vendor\Name\Actions;
 
-use Juzaweb\Abstracts\Action;
-use Juzaweb\Backend\Facades\HookAction;
+use Juzaweb\CMS\Abstracts\Action;
+use Juzaweb\CMS\Facades\HookAction;
 
 class YourAction extends Action
 {

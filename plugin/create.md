@@ -43,14 +43,9 @@ Open the composer.json file, you will see a file of the form
     "name": "author/name",
     "description": "Description plugin.",
     "extra": {
-        "laravel": {
-            "providers": [
-                "Author\\Name\\Providers\\LaravelServiceProvider"
-            ]
-        },
         "juzaweb": {
             "providers": [
-                "Juzaweb\\Name\\Providers\\PluginServiceProvider"
+                "Juzaweb\\Name\\Providers\\PluginNameServiceProvider"
             ],
             "name": "Name plugin",
             "domain": "domain",
@@ -67,7 +62,6 @@ Open the composer.json file, you will see a file of the form
 ```
 
 ### Service Provider
-- `LaravelServiceProvider` autoload load on plugin install by composer
 - `PluginServiceProvider` load on plugin activated
 
 ### Extra `juzaweb` config

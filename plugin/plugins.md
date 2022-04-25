@@ -1,4 +1,4 @@
-Plugin is a Laravel package which was created to manage your large Laravel app using modules. A plugin is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 6.
+Plugin is a Laravel package which was created to manage your large Laravel app using modules. A plugin is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 9.
 
 - [Create plugin](#create-plugin)
 - [Custom namespaces](#custom-namespaces)
@@ -119,7 +119,7 @@ E.x:
 <div class="form-group">
     <label class="col-form-label" for="logo">Logo <span class="float-right"><a href="javascript:void(0)" data-input="logo" data-preview="preview-logo" class="file-manager"><i class="fa fa-edit"></i> Change image</a></span></label>
     <div id="preview-logo">
-        <img src="{{ asset('mymo/styles/images/thumb-default.png') }}" alt="" class="w-25">
+        <img src="{{ asset('jw-styles/images/thumb-default.png') }}" alt="" class="w-25">
     </div>
     <input id="logo" class="form-control" type="hidden" name="logo" value="">
 </div>
