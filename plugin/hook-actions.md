@@ -1,7 +1,7 @@
 ## About
 - Actions and filters in Laravel. WordPress-style.
 - Actions are pieces of code you want to execute at certain points in your code. Actions never return anything but merely serve as the option to hook in to your existing code without having to mess things up.
-- Filters are made to modify entities. They always return some kind of value. By default they return their first parameter and you should too.
+- Filters are made to modify entities. They always return some kind of value. By default, they return their first parameter, and you should too.
 - [Read more about filters](http://www.wpbeginner.com/glossary/filter/)
 - [Read more about actions](http://www.wpbeginner.com/glossary/action/)
 
@@ -10,7 +10,6 @@
 **Do action hook helper function**
 ```php
 <?php
-
 function do_action($tag, ...$args) {}
 ```
 
@@ -21,26 +20,23 @@ function do_action($tag, ...$args) {}
 **Add action to hook**
 ```php
 <?php
-
 function add_action($tag, $callback, $priority = 20, $arguments = 1)
 ```
-
 - `@param string $tag` The name of the filter to hook the `$function_to_add` callback to.
 - `@param callable $callback` The callback to be run when the filter is applied.
 - `@param int $priority` (Optional)
-    - Used to specify the order in which the functions associated with a particular action are executed.
-    - Lower numbers correspond with earlier execution, and functions with the same priority are executed in the order in which they were added to the action.
-    - Default 20.
+  - Used to specify the order in which the functions associated with a particular action are executed.
+  - Lower numbers correspond with earlier execution, and functions with the same priority are executed in the order in which they were added to the action.
+  - Default 20.
 - `@param int $arguments` (Optional)
-    - The number of arguments the function accepts. 
-    - Default 1.
+  - The number of arguments the function accepts.
+  - Default 1.
 - `@return` void
 
 ### Example
 - Anywhere in your code you can create a new action like so:
 ```php
 <?php
-
 do_action('my.hook', $user);
 ```
 
@@ -74,15 +70,14 @@ function apply_filters($tag, $value, ...$args) {}
 
 ```php
 <?php
-
 function add_filters($tag, $callback, $priority = 20, $arguments = 1) {}
 ```
 - `@param string $tag` The name of the filter to hook the $function_to_add callback to.
 - `@param callable $callback` The callback to be run when the filter is applied.
-- `@param int $priority` (Optional) 
-    - Used to specify the order in which the functions associated with a particular action are executed.
-    - Lower numbers correspond with earlier execution, and functions with the same priority are executed in the order in which they were added to the action. 
-    - Default 20.
+- `@param int $priority` (Optional)
+  - Used to specify the order in which the functions associated with a particular action are executed.
+  - Lower numbers correspond with earlier execution, and functions with the same priority are executed in the order in which they were added to the action.
+  - Default 20.
 - `@param int $arguments` (Optional). The number of arguments the function accepts. Default 1.
 - `@return bool`
 ### Example
@@ -109,7 +104,6 @@ add_filters('my.hook', function($what) {
 - You could use this in conjunction with the previous hook:
 ```php
 <?php
-
 add_action('my.hook', function($what) {
     $what = add_filters('my.hook', 'awesome');
     echo 'You are '. $what;
@@ -124,3 +118,56 @@ Adding the same action as the one in the action example above:
 Adding the same filter as the one in the filter example above:
 
 You are `@apply_filters('my.hook', 'awesome')`
+
+### Action class
+**Make your custom actions**
+```php
+<?php
+
+namespace Vendor\Plugin;
+
+use Juzaweb\CMS\Abstracts\Action;
+
+class CustomAction extends Action
+{
+    public function handle()
+    {
+        // Add action or acc filter function
+    }
+
+    // Handle add action and filter
+}
+```
+
+- Example:
+```php
+<?php
+
+namespace Vendor\Plugin;
+
+use Juzaweb\CMS\Abstracts\Action;
+use Juzaweb\AdsManager\Models\Ads;
+use Juzaweb\CMS\Facades\HookAction;
+
+class CustomAction extends Action
+{
+    public function handle()
+    {
+        $this->addAction(Action::BACKEND_INIT, [$this, 'addAdminMenus']);
+    }
+
+    public function addAdminMenus()
+    {
+        HookAction::registerAdminPage(
+            'banner-ads',
+            [
+                'title' => trans('plugin_domain::content.banner_ads'),
+                'menu' => [
+                    'icon' => 'fa fa-file',
+                    'position' => 30,
+                ]
+            ]
+        );
+    }
+}
+```
