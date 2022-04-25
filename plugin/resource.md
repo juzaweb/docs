@@ -1,45 +1,40 @@
 ## Resource
-- Resource in Juza CMS is created to easily create create, update, or delete actions
+- Resource in Juza CMS is created to easily create, update, or delete actions
 - It includes components
-    - Controller: Include actions
+    - `Controller`: Include actions
         - index + datatable
         - create
         - edit
         - store
         - update
         - bulk action
-    - Model
-    - Route
+    - `Model`
+    - `Route`
     
-### Resource model
+### Resource Model
 - Make migration
 ```
 php artisan plugin:make-migration create_examples_table author/plugin-name
 ```
 - Make your model by command
 ```
-php artisan plugin:make-model Slider author/plugin-name
+php artisan plugin:make-model Example author/plugin-name
 ```
 - Use trait `ResourceModel` for your model
 ```php
 <?php
 
-namespace Plugins\Example\Models\Movie;
+namespace Plugins\Example\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Juzaweb\Traits\ResourceModel;
+use Juzaweb\CMS\Traits\ResourceModel;
 
-class Slider extends Model
+class Example extends Model
 {
     use ResourceModel;
 
     protected $fieldName = 'name';// Define column to show in breadcrumb
     protected $fillable = [
-        'name',
-    ];
-
-    // Define column for seach by keyword
-    protected $searchAttributes = [
         'name',
     ];
     // Your code
@@ -49,7 +44,7 @@ class Slider extends Model
 ### Resource controller
 - Make controller
 ```
-php artisan plugin:make-controller SliderController author/plugin-name
+php artisan plugin:make-controller ExampleController author/plugin-name
 ```
 - Use trait `ResourceController` for your model
 ```php
@@ -57,10 +52,10 @@ php artisan plugin:make-controller SliderController author/plugin-name
 
 namespace Plugins\Example\Http\Controllers;
 
-use Juzaweb\Http\Controllers\BackendController;
+use Juzaweb\CMS\Http\Controllers\BackendController;
 use Plugins\Example\Models\Slider;
 
-class SliderController extends BackendController
+class ExampleController extends BackendController
 {
     use ResourceController;
 
@@ -76,12 +71,12 @@ class SliderController extends BackendController
         return $validator;
     }
 
-    protected function getModel()
+    protected function getModel(...$params)
     {
-        return Slider::class;
+        return Example::class;
     }
 
-    protected function getTitle()
+    protected function getTitle(...$params)
     {
         return trans('example::app.sliders');
     }
@@ -91,6 +86,5 @@ class SliderController extends BackendController
 - Add route for resource
 ```php
 <?php
-
-Route::jwResource('sliders', 'SliderController');
+Route::jwResource('example', 'SliderController');
 ```

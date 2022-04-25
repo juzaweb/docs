@@ -139,7 +139,7 @@ class CustomAction extends Action
 }
 ```
 
-- Example:
+- Add Action Example:
 ```php
 <?php
 
@@ -154,6 +154,7 @@ class CustomAction extends Action
     public function handle()
     {
         $this->addAction(Action::BACKEND_INIT, [$this, 'addAdminMenus']);
+        $this->addAction(Action::POSTS_FORM_LEFT_ACTION, [$this, 'addActionWithParameter']);
     }
 
     public function addAdminMenus()
@@ -169,5 +170,15 @@ class CustomAction extends Action
             ]
         );
     }
+    
+    public function addActionWithParameter($model)
+    {
+        echo 'Model Title: ' . $model->title;
+    }
 }
+```
+
+- Add filter Example:
+```php
+ 
 ```
