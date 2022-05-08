@@ -1,3 +1,18 @@
+### v3.0.4
+- Add Install themes
+- Add Install plugins
+- Add style publish themes default/gamxo
+- Fix get data api response (Get all response)
+- Fix overwrite config
+- Fix require plugin active theme
+- Test Login
+- Test Register
+- Test Forgot password
+- Fix run migrate active plugin
+- Update docs models
+- Fix test plugin
+- Split packages module
+
 ### v3.0.3
 - Add Install themes
 - Add Install plugins
@@ -32,7 +47,7 @@
 
 ### v3.0.1
 - Fix create folder file manager
-- Google translate cms command
+- Google Translate CMS command
 - Refix datatable
 
 ### v3.0
