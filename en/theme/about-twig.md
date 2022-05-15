@@ -7,4 +7,3 @@ See all documention [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com
 
 ### Using
 - Default theme layouts `cms::layouts.frontend`
-- 
