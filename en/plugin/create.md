@@ -1,3 +1,5 @@
+Plugin is a Laravel package which was created to manage your large Laravel app using modules. A plugin is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 9.
+
 ### Create plugin
 Creating a plugin is simple and straightforward. Run the following command to create a plugin.
 ```

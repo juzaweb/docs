@@ -1,4 +1,4 @@
-Plugin is a Laravel package which was created to manage your large Laravel app using modules. A plugin is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 9.
+
 
 - [Create plugin](#create-plugin)
 - [Custom namespaces](#custom-namespaces)
@@ -59,31 +59,7 @@ class YourController extends BackendController
 - font-awesome
 - sweetalert2
 - toastr
-### Support
-#### Form ajax
-- Add class `form-ajax` to your form to use ajax send form
-```html
-<form action="" method="post" class="form-ajax">
-// Your code
-</form>
-```
-- Resource form component
-```php
-@component('cms::components.form', [
-    'method' => 'method: post, put, get, ...',
-    'action' => 'action url'
-])
-```
 
-- Use component for form resource
-```php
-@component('cms::components.form_resource', [
-    'method' => $model->id ? 'put' : 'post',
-    'action' =>  $model->id ?
-        route('admin.posts.update', [$model->id]) :
-        route('admin.posts.store')
-])
-```
 #### Select image from file manager
 - by component
 ```php

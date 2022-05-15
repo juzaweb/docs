@@ -177,8 +177,3 @@ class CustomAction extends Action
     }
 }
 ```
-
-- Add filter Example:
-```php
- 
-```

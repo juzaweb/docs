@@ -29,7 +29,7 @@ class YourAction extends Action
                 'model' => \Author\Name\Models\Movie::class,
                 'menu_icon' => 'fa fa-film',
                 'menu_position' => 10,
-                'supports' => ['tag'], // Supports options: tag, category
+                'supports' => ['tag'], // Support options: tag, category
             ]
         );
         
