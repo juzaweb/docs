@@ -77,11 +77,6 @@ Add or edit your `register.json` file
 {
     // Your code
     "blocks": {
-        "news_slider": {
-            "label": "Post slider",
-            "description": "Posts slider carousel",
-            "view": "theme::widgets.news_slider.show"
-        },
         "popular_news": {
             "label": "Popular news",
             "description": "Popular news",
