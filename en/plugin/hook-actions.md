@@ -9,7 +9,6 @@
 ### Helper functions
 **Do action hook helper function**
 ```php
-<?php
 function do_action($tag, ...$args) {}
 ```
 
@@ -19,7 +18,6 @@ function do_action($tag, ...$args) {}
 
 **Add action to hook**
 ```php
-<?php
 function add_action($tag, $callback, $priority = 20, $arguments = 1)
 ```
 - `@param string $tag` The name of the filter to hook the `$function_to_add` callback to.
@@ -36,7 +34,6 @@ function add_action($tag, $callback, $priority = 20, $arguments = 1)
 ### Example
 - Anywhere in your code you can create a new action like so:
 ```php
-<?php
 do_action('my.hook', $user);
 ```
 
@@ -46,7 +43,6 @@ do_action('my.hook', $user);
 
 For example if you wanted to hook in to the above hook, you could do:
 ```php
-<?php
 add_action('my.hook', function($user) {
     if ($user->is_awesome) {
          $this->doSomethingAwesome($user);
@@ -57,8 +53,6 @@ add_action('my.hook', function($user) {
 ## Filters
 ### Helper functions
 ```php
-<?php
-
 function apply_filters($tag, $value, ...$args) {}
 ```
 
@@ -69,7 +63,6 @@ function apply_filters($tag, $value, ...$args) {}
 - `@return mixed` The filtered value after all hooked functions are applied to it.
 
 ```php
-<?php
 function add_filters($tag, $callback, $priority = 20, $arguments = 1) {}
 ```
 - `@param string $tag` The name of the filter to hook the $function_to_add callback to.
@@ -84,16 +77,12 @@ function add_filters($tag, $callback, $priority = 20, $arguments = 1) {}
 - Filters work in much the same way as actions and have the exact same build-up as actions. The most significant difference is that filters always return their value.
 
 ```php
-<?php
-
 $value = apply_filters('my.hook', 'awesome');
 ```
 
 - If no listeners are attached to this hook, the filter would simply return `'awesome'`.
 - This is how you add a listener to this filter (still in the `actions` folder files)
 ```php
-<?php
-
 add_filters('my.hook', function($what) {
     $what = 'not '. $what;
     return $what;
@@ -103,7 +92,6 @@ add_filters('my.hook', function($what) {
 - The filter would now return `'not awesome'`. Neat!
 - You could use this in conjunction with the previous hook:
 ```php
-<?php
 add_action('my.hook', function($what) {
     $what = add_filters('my.hook', 'awesome');
     echo 'You are '. $what;

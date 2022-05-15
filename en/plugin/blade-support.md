@@ -1,4 +1,4 @@
-### Component Support
+## Component Support
 - Resource form component
 ```php
 @component('cms::components.form', [
@@ -26,7 +26,7 @@
 @endcomponent
 ```
 
-### Field Support
+## Field Support
 - Input text field
 ```php
 Field::text($label, $name, $options = [])
@@ -86,10 +86,21 @@ Field::image($label, $name, $options = [])
 Field::images($label, $name, $options = [])
 ```
 
-### Form ajax
+## Form ajax
 - Add class `form-ajax` to your form to use ajax send form
 ```html
 <form action="" method="post" class="form-ajax">
 // Your code
 </form>
 ```
+
+## Assets
+
+### Libs added
+- Jquery
+- Bootstrap
+- select2
+- bootstrap-datepicker
+- font-awesome
+- sweetalert2
+- toastr
