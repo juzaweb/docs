@@ -1,3 +1,14 @@
+### v3.0.8
+- Update CMS multistep
+- Update plugin multistep
+- Update theme multistep
+- Backend message helper
+- Theme activate helper
+- Fix install plugin theme require
+- Add Delete theme
+- Change license comment
+- Add Theme unit test
+
 ### v3.0.7
 - Custom autoload file plugins
 - Add Media unit test

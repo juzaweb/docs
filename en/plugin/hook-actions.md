@@ -108,6 +108,8 @@ Adding the same filter as the one in the filter example above:
 You are `@apply_filters('my.hook', 'awesome')`
 
 ### Action class
+To make the management easy, we divide the action handlers into separate classes. Instead of calling `add_action` or `apply_filter` everywhere your project, Let's create an Action class, handle your add_action or apply_filter, making them easy to manage.
+
 **Make your custom actions**
 ```php
 <?php
@@ -164,4 +166,29 @@ class CustomAction extends Action
         echo 'Model Title: ' . $model->title;
     }
 }
+```
+
+- Register Your action: In `boot` function in your `ServiceProvider`, Register your action.
+```php
+<?php
+
+namespace Vendor\Plugin\Providers;
+
+use Juzaweb\CMS\Facades\ActionRegister;
+use Juzaweb\CMS\Support\ServiceProvider;
+use Vendor\Plugin\CustomAction;
+
+class ThemeServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        ActionRegister::register(
+            [
+                CustomAction::class,
+            ]
+        );
+    }
+
+    // Your code
+} 
 ```
