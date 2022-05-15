@@ -1,21 +1,21 @@
 ## Commands
-- **Make model** Generate the given model for the specified plugin.
+- **Make model** Tạo Model cho plugin được chỉ định.
 ```
 php artisan plugin:make-model ModelName author/plugin-name
 ```
-- **Make controller** Generate a controller for the specified plugin.
+- **Make controller** Tạo Controller cho plugin được chỉ định.
 ```
 php artisan plugin:make-controller ModelName author/plugin-name
 ```
-- **Make resource** Generate Juza CMS resource for the specified plugin.
+- **Make resource** Tạo Juza CMS Resource cho plugin được chỉ định.
 ```
 php artisan plugin:make-jw-resource table_name author/plugin-name
 ```
-- **Migrate**: Migrate the given plugin, or without a plugin an argument, migrate all plugins.
+- **Migrate**: Migrate plugin đã cho hoặc không có đối số plugin Migrate tất cả các plugin
 ```
 php artisan plugin:migrate author/plugin-name
 ```
-- **Migrate rollback**: Rollback the given plugin, or without an argument, rollback all plugins.
+- **Migrate rollback**: Khôi phục Migrate plugin đã chạy hoặc không có đối số khôi phục tất cả các plugin.
 ```
 php artisan plugin:migrate-rollback author/plugin-name
 ```

@@ -8,6 +8,11 @@ php artisan plugin:make author/plugin-name
 ```
 plugins/
 |-- author/plugin-name/
+    |-- assets/
+      |-- js/
+        |-- app.js
+      |-- sass/
+        |-- app.scss
     |-- src/
         |-- database/
           |-- factories/
@@ -22,11 +27,6 @@ plugins/
         |-- Providers/
           |-- PluginNameServiceProvider.php
         |-- resources/
-          |-- assets/
-              |-- js/
-                |-- app.js
-              |-- sass/
-                |-- app.scss
           |-- lang/
           |-- views/
         |-- routes/

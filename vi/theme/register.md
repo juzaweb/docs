@@ -34,24 +34,36 @@ Add nav menu location in your theme. Add or edit your `register.json` file
 And `Admin -> Menu`, You can choose `location` for your menu
 
 ### Register sidebar
-Add or edit your `register.json` file
+Sidebar được đề cập đến một khu vực sẵn sàng cho tiện ích được các Theme sử dụng để hiển thị thông tin không phải là một phần của nội dung chính. Nó không phải lúc nào cũng là một cột dọc ở bên. Nó có thể là một hình chữ nhật nằm ngang bên dưới hoặc phía trên vùng nội dung, chân trang, đầu trang hoặc bất kỳ vị trí nào trong Theme.
+
+Việc sử dụng các Sidebar khác nhau và tùy thuộc vào lựa chọn của người thiết kế Theme. Các Theme hỗ trợ nhiều Sidebar còn được gọi là các khu vực sẵn sàng cho tiện ích.
+
+#### Add sidebar vào Theme
+- Add or edit your `register.json` file
 ```json
 {
     // Your code
     "sidebars": {
         "sidebar": {
             "label": "Sidebar"
-        },
-        "footer": {
-            "label": "Footer"
         }
     },
     // Your code
 }
 ```
+- Bây giờ, bạn có thể vào `Admin -> Widgets` đã xuất hiện block `Sidebar` trên cột phía bên phải màn hình.
+#### Hiển thị sidebar trên Theme
+- Bạn có thể sử dụng hàm `dynamic_sidebar` để gọi Sidebar vào vị trí bạn muốn hiển thị Sidebar
+- Ex:
+```twig
+<div class="sticky-top">
+    {{ dynamic_sidebar('sidebar') }}
+</div>
+```
 
 ### Register `widgets`
-Add or edit your `register.json` file
+#### Add `widgets`
+- Add or edit your `register.json` file
 ```json
 {
     // Your code
@@ -70,9 +82,30 @@ Add or edit your `register.json` file
     // Your code
 }
 ```
+#### Thêm `widgets` vào `sidebars`
+- Để thêm `widgets` vào `sidebars` bạn vào `Admin -> Appearance -> Widgets` chọn và nhấn `Add Widget` từ cột bên trái, `widgets` sẽ được thêm vào các `sidebars` tương ứng ở cột bên phải
+
+### Register page templates
+- Add or edit your `register.json` file
+```json
+{
+    // Your code
+    "templates": {
+        "home": {
+            "label": "Home",
+            "view": "theme::templates.home"
+        }
+    },
+    // Your code
+}
+```
+- Đoạn code trên add một template có key `home`, bạn có thể nhìn thấy nó trong `Admin -> Page -> Edit/Create Form -> Template`. `theme::templates.home` chính là view hiển thị nội dung page. Để hiển thị nội dung template, hãy xem thêm ở mục [Custom Page](custom-page)
 
 ### Register page block
-Add or edit your `register.json` file
+`Page Block` giống với `widgets` nhưng nó có thể được tùy chỉnh ở các page cụ thể nếu page đó có sự dụng `Page Block` content
+
+#### Add Page Block
+- Add or edit your `register.json` file
 ```json
 {
     // Your code
@@ -86,9 +119,9 @@ Add or edit your `register.json` file
     // Your code
 }
 ```
-
-### Register page templates
-Add or edit your `register.json` file
+- Đoạn code trên add một `Page Block` có key là `popular_news`, `theme::widgets.popular_news.show` chính là view hiển thị của block này trên Theme.
+#### Sử dụng Page Block trong template
+- Để sự Page Block trong template, bạn cần đăng ký các blocks trong phần đăng ký template của mình.
 ```json
 {
     // Your code
@@ -101,15 +134,12 @@ Add or edit your `register.json` file
                     "label": "Content"
                 }
             }
-        },
-        "support": {
-            "label": "Support",
-            "view": "theme::templates.support" // View template
         }
     },
     // Your code
 }
 ```
+- `content` chính là block người dùng có thể thêm các block con khi tạo/chỉnh sửa các page có template `home`
 
 See more document for page templates: 
 
