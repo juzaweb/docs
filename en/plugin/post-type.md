@@ -1,5 +1,5 @@
 ## Post type
-There are many types of content in Juza CMS. These content types are normally described as Post Types, which may be a little confusing since it refers to all different types of content in Juza CMS. For example, a post is a specific Post Type, and so is a page.
+There are many different types of content in Juza CMS. These content types are normally described as Post Types, which may be a little confusing since it refers to all different types of content in Juza CMS. For example, a post is a specific Post Type, and so is a page.
 
 ### Default Post Types
 - Post (Post Type: ``posts``)
@@ -10,8 +10,8 @@ Add to your file action
 ```php
 <?php
 
-use Juzaweb\CMS\Facades\HookAction;
-use Juzaweb\CMS\Abstracts\Action;
+use Juzaweb\Backend\Facades\HookAction;
+use Juzaweb\Abstracts\Action;
 
 class YourAction extends Action
 {
@@ -26,9 +26,10 @@ class YourAction extends Action
             'movies',
              [
                 'label' => trans('movie::app.movies'),
+                'model' => \Author\Name\Models\Movie::class,
                 'menu_icon' => 'fa fa-film',
                 'menu_position' => 10,
-                'supports' => ['tag'], // Support options: tag, category, comment
+                'supports' => ['tag'], // Supports options: tag, category
             ]
         );
         

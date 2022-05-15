@@ -19,13 +19,13 @@ return [
 ];
 ```
 
-### Set up send email with crontab
-- If you use crontab to send email, you need to set up ``The Scheduler`` on your server, hosting
+### Setup mail in cron
+- If you use crontab to send email, you need to setup ``The Scheduler`` on your server, hosting
 - Setup ``The Scheduler``: Add command to your server
 ```
 * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
 ```
-View more: [Starting The Scheduler](https://laravel.com/docs/9.x/scheduling#introduction)
+View more: [Starting The Scheduler](https://laravel.com/docs/6.x/scheduling#introduction)
 
 ### Make Email Template and Send email
 - Before sending an email, you need to create an email template. You can manage email templates at ``/admin-cp/email-template``
@@ -68,8 +68,8 @@ Email::make()
 
 namespace Vendor\Name\Actions;
 
-use Juzaweb\CMS\Abstracts\Action;
-use Juzaweb\CMS\Facades\HookAction;
+use Juzaweb\Abstracts\Action;
+use Juzaweb\Backend\Facades\HookAction;
 
 class YourAction extends Action
 {
@@ -123,5 +123,5 @@ class YouController
 }
 ```
 
-- In CMS `Admin -> Setting -> Email Template`, you can choose `Email Hook` for email templates. When the `register_success` event occurs, this email template will be sent.
+- In email template manage, you can choose ``Email Hook`` for email templates. When the ``register_success`` event occurs, this email template will be sent.
 ![Chosse hook in email template](https://i.imgur.com/4J38pgW.png)
