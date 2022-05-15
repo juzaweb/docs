@@ -1,3 +1,35 @@
+### v3.0.7
+- Custom autoload file plugins
+- Add Media unit test
+- Ignore testing env
+- Add assets route for themes
+- Add assets route for plugins
+- Add assets route for storage
+- Update Plugin helper
+- Update Theme helper
+
+### v3.0.6
+- Fix install composer
+
+### v3.0.5
+- Custom autoload file plugins
+- Update command project
+
+### v3.0.4
+- Add Install themes
+- Add Install plugins
+- Add style publish themes default/gamxo
+- Fix get data api response (Get all response)
+- Fix overwrite config
+- Fix require plugin active theme
+- Test Login
+- Test Register
+- Test Forgot password
+- Fix run migrate active plugin
+- Update docs models
+- Fix test plugin
+- Split packages module
+
 ### v3.0.3
 - Add Install themes
 - Add Install plugins
