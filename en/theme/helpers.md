@@ -101,18 +101,22 @@
     - Paginate render
         - `@param data`: Paginate data
         - `@param string view`: View paginate item
+  
 - **is_string(var)**
     - Finds whether a variable is an string
         - `@param mixed var`: The variable being evaluated.
         - `@return bool` true if var is an string
+
 - **is_array(var)**
     - Finds whether a variable is an array
         - `@param mixed var`: The variable being evaluated.
         - `@return bool` true if var is an array
+
 - **json_encode(array $array)**
     - Returns the JSON representation of a value
         - `@param mixed $value`: The *value* being encoded. Can be any type except a resource.
         - `@return string|false` a JSON encoded string on success or *FALSE* on failure.
+
 - **md5(str)**
     - Calculate the md5 hash of a string
         - `@param string str`

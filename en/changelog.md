@@ -1,3 +1,33 @@
+
+### v3.0.8
+- Update CMS multistep
+- Update plugin multistep
+- Update theme multistep
+- Backend message helper
+- Theme activate helper
+- Fix install plugin theme require
+- Add Delete theme
+- Change license comment
+- Add Theme unit test
+
+### v3.0.7
+- Custom autoload file plugins
+- Add Media unit test
+- Ignore testing env
+- Add assets route for themes
+- Add assets route for plugins
+- Add assets route for storage
+- Update Plugin helper
+- Update Theme helper
+
+### v3.0.6
+- Fix install composer
+
+### v3.0.5
+- Custom autoload file plugins
+- Update command project
+
+>>>>>>> c1131f6451ba608f812aa6a34a77b5f0657518f6:en/changelog.md
 ### v3.0.4
 - Add Install themes
 - Add Install plugins

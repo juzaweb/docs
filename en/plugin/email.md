@@ -20,7 +20,7 @@ return [
 ```
 
 ### Setup mail in cron
-- If you use crontab to send email, you need to setup ``The Scheduler`` on your server, hosting
+- If you use crontab to send email, you need to set up ``The Scheduler`` on your server, hosting
 - Setup ``The Scheduler``: Add command to your server
 ```
 * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
