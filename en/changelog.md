@@ -1,3 +1,8 @@
+### v3.0.9
+- Basic media management
+- Init inertiajs
+- Inertiajs config
+- Test update CMS
 
 ### v3.0.8
 - Update CMS multistep
@@ -27,7 +32,6 @@
 - Custom autoload file plugins
 - Update command project
 
->>>>>>> c1131f6451ba608f812aa6a34a77b5f0657518f6:en/changelog.md
 ### v3.0.4
 - Add Install themes
 - Add Install plugins
