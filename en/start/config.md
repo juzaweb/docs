@@ -20,7 +20,6 @@ php artisan vendor:publish --tag=cms_assets
 ```
 
 ### Config
-
 - Publish config file
 ```
 php artisan vendor:publish --tag=cms_config
@@ -36,6 +35,18 @@ return [
      * Default: admin-cp
      */
     'admin_prefix' => env('ADMIN_PREFIX', 'admin-cp'),
+    
+    /**
+     * Cache prefix
+     *
+     * Default: juzaweb_
+     */
+    'cache_prefix' => 'juzaweb_',
+    
+    /**
+     * Show logs in admin page
+     */
+    'logs_viewer' => true,
 
     'email' => [
         /**
@@ -56,6 +67,31 @@ return [
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
         ],
+    ],
+    
+    'notification' => [
+        /**
+         * Method send notification
+         *
+         * Support: sync, queue, cron
+         * Default: sync
+         */
+        'method' => 'sync',
+
+        /**
+         * Send mail via
+         *
+         * Support: database, mail
+         */
+        'via' => [
+            'database' => [
+                'enable' => true,
+            ],
+            'mail' => [
+                'enable' => true,
+                'connection' => 'default',
+            ]
+        ]
     ],
 
     'theme' => [
@@ -120,8 +156,21 @@ return [
      * File management setting
      */
     'filemanager' => [
+        /**
+         * FileSystem disk
+         */
         'disk' => 'public',
+        /**
+         * Optimizer image after upload
+         *
+         * @see https://juzaweb.com/documentation/start/image-optimizer
+         */
         'image-optimizer' => (bool) env('IMAGE_OPTIMIZER', false),
+        
+        'svg_mimetypes' => [
+            ...Facades::defaultSVGMimetypes(),
+            //
+        ],
         'types' => [
             'file'  => [
                 'max_size' => 50, // size in MB
@@ -139,44 +188,32 @@ return [
             'image' => [
                 'max_size' => 5, // size in MB
                 'valid_mime' => [
-                    'image/jpeg',
-                    'image/pjpeg',
-                    'image/png',
-                    'image/gif',
-                    'image/svg+xml',
+                    ...Facades::defaultImageMimetypes(),
+                    //
                 ],
             ],
         ],
+    ],
+    
+    'api' => [
+        'enable' => env('JW_ALLOW_API', false)
     ],
 
     /**
      * Default database config
      */
     'config' => [
-        'title',
-        'description',
-        'banner',
-        'logo',
-        'icon',
-        'banner',
-        'sitename',
-        'user_registration',
-        'user_verification',
-        'comment_able',
-        'comment_type',
-        'comments_per_page',
-        'comments_approval',
-        'author_name',
-        'facebook',
-        'twitter',
-        'pinterest',
-        'youtube',
-        'google_analytics',
-        'language',
-        'timezone',
-        'date_format',
-        'time_format',
-        'fb_app_id',
+        ...Facades::defaultConfigs(),
+        //
     ]
+];
+```
+
+- Network configs
+```php
+return [
+    'enable' => env('JW_ALLOW_MULTISITE', false),
+
+    'domain' => env('JW_NETWORK_ROOT_DOMAIN')
 ];
 ```

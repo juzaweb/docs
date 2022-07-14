@@ -49,7 +49,7 @@ Open the composer.json file, you will see a file of the form
             "providers": [
                 "Juzaweb\\Name\\Providers\\PluginNameServiceProvider"
             ],
-            "name": "Name plugin",
+            "name": "Plugin Name",
             "domain": "domain",
             "cms_min": "3.0",
             "version": "1.0"
