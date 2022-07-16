@@ -1,3 +1,53 @@
+### v3.1.8
+* Add proxy url for dev
+* Fix add column translations
+* Upload themes
+* Upload plugins
+* Network Multisite support
+* Fix load files plugin
+* Network plugins managerment
+* Network themes managerment
+* Add register permision
+
+### v3.1.7
+* Import data blogger helper
+* Fix url image editor
+* Add convert editor
+* Register profile page
+* Fix show submenu
+* Add log view menu
+* Fix show icon web
+* Fix paginate media
+* Fix asset link plugin
+* Add browserSync for dev
+* Add default config twig
+
+### v3.1.5 - v3.1.6
+* Notify update
+* Fix send notify
+* Perpage config
+* Post/Feed per page config
+* Show number notify
+
+### v3.1.4
+* Fix update CMS
+
+### v3.1.3
+* Fix update CMS
+
+### v3.1.2
+* Fix media browser
+* Fix install in hosting
+
+### v3.1.1
+* Fix install hosting
+* Fix media test
+
+### v3.1.0
+* Update packages
+* Add translation loader package
+* Fix check installed
+
 ### v3.0.9
 - Basic media management
 - Init inertiajs
