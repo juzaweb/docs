@@ -1,3 +1,18 @@
+### v3.2.2
+* Fix update CMS
+* Fix show Field
+
+### v3.2.1
+* Check social login
+* Add seo form
+* SEO configs
+    - Sitemap
+    - seo content
+    - feed
+* Auto ping SEO
+* Backup setting
+* Style setting form
+
 ### v3.1.8
 * Add proxy url for dev
 * Fix add column translations
