@@ -1,3 +1,11 @@
+### v3.2.3
+- Style Selete tags, categories
+- Test after update
+- Fix test theme
+- Fix test plugin
+- Show parent categories
+- Fix filter datatable
+
 ### v3.2.2
 * Fix update CMS
 * Fix show Field
@@ -5,7 +13,7 @@
 ### v3.2.1
 * Check social login
 * Add seo form
-* SEO configs
+* SEO Configs
     - Sitemap
     - seo content
     - feed
