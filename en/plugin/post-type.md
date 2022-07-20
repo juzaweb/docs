@@ -10,8 +10,10 @@ Add to your file action
 ```php
 <?php
 
+namespace Author\PluginName;
+
 use Juzaweb\Backend\Facades\HookAction;
-use Juzaweb\Abstracts\Action;
+use Juzaweb\CMS\Abstracts\Action;
 
 class YourAction extends Action
 {
@@ -26,7 +28,6 @@ class YourAction extends Action
             'movies',
              [
                 'label' => trans('movie::app.movies'),
-                'model' => \Author\Name\Models\Movie::class,
                 'menu_icon' => 'fa fa-film',
                 'menu_position' => 10,
                 'supports' => ['tag'], // Support options: tag, category
